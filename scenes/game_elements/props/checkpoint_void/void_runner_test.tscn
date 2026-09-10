@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://wrp546kde0xt"]
+[gd_scene format=4 uid="uid://bny2uylwca18m"]
 
 [ext_resource type="Script" uid="uid://2lwkwxpawda3" path="res://scenes/quests/lore_quests/quest_002/1_void_runner/components/void_runner.gd" id="1_dkf36"]
 [ext_resource type="PackedScene" uid="uid://2rbpl811wlv1" path="res://scenes/game_elements/props/background_music/background_music.tscn" id="2_or4aa"]
@@ -50,7 +50,6 @@
 [ext_resource type="PackedScene" uid="uid://dv4f232y8w8dv" path="res://scenes/game_elements/props/decoration/water_rock/water_rock.tscn" id="49_sp0te"]
 [ext_resource type="PackedScene" uid="uid://cgodc8fruhsmv" path="res://scenes/game_elements/props/checkpoint_void/checkpoint_void.tscn" id="50_80mfd"]
 [ext_resource type="PackedScene" uid="uid://cfcgrfvtn04yp" path="res://scenes/ui_elements/hud/hud.tscn" id="50_i7ee0"]
-[ext_resource type="PackedScene" uid="uid://d37mebu7atru7" path="res://scenes/game_elements/characters/enemies/guard/guard.tscn" id="50_o3f4s"]
 
 [sub_resource type="Resource" id="Resource_tsnue"]
 script = ExtResource("14_6xi0f")
@@ -92,16 +91,14 @@ metadata/_edit_lock_ = true
 stream = ExtResource("3_km735")
 clip = &"Still"
 
-[node name="ChaseClipSwitcher" type="Node" parent="BackgroundMusic" unique_id=1356095710 node_paths=PackedStringArray("trigger")]
+[node name="ChaseClipSwitcher" type="Node" parent="BackgroundMusic" unique_id=1356095710]
 script = ExtResource("4_e041b")
 clip = &"Bloom"
-trigger = NodePath("")
 metadata/_custom_type_script = "uid://c2lx7gvkonxaa"
 
-[node name="SafetyClipSwitcher" type="Node" parent="BackgroundMusic" unique_id=172495821 node_paths=PackedStringArray("trigger")]
+[node name="SafetyClipSwitcher" type="Node" parent="BackgroundMusic" unique_id=172495821]
 script = ExtResource("4_e041b")
 clip = &"Still"
-trigger = NodePath("")
 metadata/_custom_type_script = "uid://c2lx7gvkonxaa"
 
 [node name="TileMapLayers" type="Node2D" parent="." unique_id=329261217]
@@ -1300,9 +1297,6 @@ position = Vector2(2461, 2732)
 
 [node name="HUD" parent="." unique_id=1953354605 instance=ExtResource("50_i7ee0")]
 
-[node name="Guard" parent="." unique_id=689832587 instance=ExtResource("50_o3f4s")]
-position = Vector2(2049, 2212)
-
 [node name="Checkpoint_void" parent="." unique_id=1789892556 node_paths=PackedStringArray("persistent_enemies", "shared_void_layer") instance=ExtResource("50_80mfd")]
 position = Vector2(954, 2860)
 persistent_enemies = [NodePath("../OnTheGround/VoidSpreadingEnemy")]
@@ -1314,7 +1308,7 @@ shape = SubResource("RectangleShape2D_o3f4s")
 
 [node name="Checkpoint_void3" parent="." unique_id=709887827 node_paths=PackedStringArray("persistent_enemies", "shared_void_layer") instance=ExtResource("50_80mfd")]
 position = Vector2(2081, 2008)
-persistent_enemies = [NodePath("../Guard")]
+persistent_enemies = [NodePath(""), NodePath("../OnTheGround/VoidSpreadingEnemy"), NodePath("../OnTheGround/VoidSpreadingEnemy2")]
 shared_void_layer = NodePath("../TileMapLayers/Void")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_void3" unique_id=541827379]
